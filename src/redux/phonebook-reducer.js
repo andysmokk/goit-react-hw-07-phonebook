@@ -4,9 +4,9 @@ import {
   submitContacts,
   changeFilter,
 } from './phonebook-actions';
-import defaultContacts from '../json/defaultContacts.json';
+// import defaultContacts from '../json/defaultContacts.json';
 
-export const contactsReducer = createReducer(defaultContacts, {
+export const contactsReducer = createReducer([], {
   [submitContacts]: (state, action) => [action.payload, ...state],
   [deleteContact]: (state, action) =>
     state.filter(({ id }) => id !== action.payload),
