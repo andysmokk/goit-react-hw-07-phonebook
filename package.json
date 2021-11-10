@@ -1,6 +1,6 @@
 {
-  "name": "goit-react-hw-06-phonebook",
-  "homepage": "https://andysmokk.github.io/goit-react-hw-06-phonebook",
+  "name": "goit-react-hw-07-phonebook",
+  "homepage": "https://andysmokk.github.io/goit-react-hw-07-phonebook",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -50,6 +50,7 @@
   "devDependencies": {
     "eslint": "^7.32.0",
     "husky": "^7.0.2",
+    "json-server": "^0.17.0",
     "lint-staged": "^11.2.0",
     "prettier": "^2.4.1"
   },
