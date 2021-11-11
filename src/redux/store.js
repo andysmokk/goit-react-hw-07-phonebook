@@ -10,7 +10,11 @@ import { configureStore, combineReducers } from '@reduxjs/toolkit';
 //   REGISTER,
 // } from 'redux-persist';
 // import storage from 'redux-persist/lib/storage';
-import { contactsReducer, filterReducer } from './phonebook-reducer';
+import {
+  contactsReducer,
+  filterReducer,
+  loadingReducer,
+} from './phonebook-reducers';
 
 // const contactsPersistConfig = {
 //   key: 'contacts',
@@ -21,6 +25,7 @@ import { contactsReducer, filterReducer } from './phonebook-reducer';
 const rootReducer = combineReducers({
   contacts: contactsReducer,
   filter: filterReducer,
+  loading: loadingReducer,
 });
 
 // const persistedReducer = persistReducer(contactsPersistConfig, rootReducer);
