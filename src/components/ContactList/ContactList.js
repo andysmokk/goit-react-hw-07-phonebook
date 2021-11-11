@@ -6,7 +6,7 @@ import s from './ContactList.module.css';
 export default function ContactList() {
   const contacts = useSelector(getFilteredContacts);
   const dispatch = useDispatch();
-  console.log(contacts);
+  // console.log(contacts);
 
   const onDeleteContact = id => dispatch(deleteContact(id));
 

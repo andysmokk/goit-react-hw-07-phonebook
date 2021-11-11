@@ -1,6 +1,6 @@
 import { createReducer } from '@reduxjs/toolkit';
 import {
-  deleteContact,
+  // deleteContact,
   // submitContacts,
   changeFilter,
 } from './phonebook-actions';
