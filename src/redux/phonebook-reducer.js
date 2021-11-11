@@ -1,9 +1,10 @@
 import { createReducer } from '@reduxjs/toolkit';
 import {
   deleteContact,
-  submitContacts,
+  // submitContacts,
   changeFilter,
 } from './phonebook-actions';
+import { submitContacts } from './phonebook-operations';
 // import defaultContacts from '../json/defaultContacts.json';
 
 export const contactsReducer = createReducer([], {

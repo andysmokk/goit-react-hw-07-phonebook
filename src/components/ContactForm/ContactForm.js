@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { submitContacts } from '../../redux/phonebook-actions';
+import { submitContacts } from '../../redux/phonebook-operations';
 import shortid from 'shortid';
 import { getContacts } from '../../redux/phonebook-selectors';
 import s from './ContactForm.module.css';
