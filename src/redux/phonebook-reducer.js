@@ -4,12 +4,12 @@ import {
   // submitContacts,
   changeFilter,
 } from './phonebook-actions';
-import { addContacts, fetchContacts } from './phonebook-operations';
+import { addContactSuccess, fetchContactSuccess } from './phonebook-actions';
 // import defaultContacts from '../json/defaultContacts.json';
 
 export const contactsReducer = createReducer([], {
-  [addContacts]: (state, action) => [action.payload, ...state],
-  [fetchContacts]: (_, action) => action.payload,
+  [fetchContactSuccess]: (_, action) => action.payload,
+  [addContactSuccess]: (state, action) => [...state, action.payload],
 
   [deleteContact]: (state, action) =>
     state.filter(({ id }) => id !== action.payload),

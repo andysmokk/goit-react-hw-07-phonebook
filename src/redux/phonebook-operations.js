@@ -10,10 +10,14 @@ import {
 
 export const addContacts = contact => dispatch => {
   dispatch(addContactRequest());
+  console.log('contact', contact);
 
   axios
     .post('http://localhost:3000/contacts', contact)
-    .then(({ data }) => dispatch(addContactSuccess(data)))
+    .then(({ data }) => {
+      console.log('data', data);
+      dispatch(addContactSuccess(data));
+    })
     .catch(error => dispatch(addContactError(error)));
 };
 

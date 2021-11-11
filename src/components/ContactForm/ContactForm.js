@@ -12,13 +12,13 @@ export default function ContactForm() {
   const contacts = useSelector(getContacts);
   const dispatch = useDispatch();
 
-  // useEffect(() => {
-  //   fetchContacts();
-  // }, []);
+  useEffect(() => {
+    dispatch(fetchContacts());
+  }, [dispatch]);
 
   const onSubmit = contact => {
-    dispatch(addContacts(contact));
     // dispatch(fetchContacts());
+    dispatch(addContacts(contact));
   };
 
   const onSubmitForm = e => {
