@@ -6,6 +6,9 @@ import {
   fetchContactRequest,
   fetchContactSuccess,
   fetchContactError,
+  deleteContactRequest,
+  deleteContactSuccess,
+  deleteContactError,
 } from './phonebook-actions';
 
 export const addContacts = contact => dispatch => {
@@ -28,6 +31,15 @@ export const fetchContacts = () => dispatch => {
     .get('http://localhost:3000/contacts')
     .then(({ data }) => dispatch(fetchContactSuccess(data)))
     .catch(error => dispatch(fetchContactError(error)));
+};
+
+export const deleteContact = contactId => dispatch => {
+  dispatch(deleteContactRequest());
+
+  axios
+    .delete(`http://localhost:3000/contacts/${contactId}`)
+    .then(() => dispatch(deleteContactSuccess(contactId)))
+    .catch(error => dispatch(deleteContactError(error)));
 };
 
 // export const submitContacts = text => async dispatch => {
