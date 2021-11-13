@@ -1,6 +1,9 @@
 import { useState, useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { addContacts, fetchContacts } from '../../redux/phonebook-operations';
+import {
+  postAddContact,
+  fetchContacts,
+} from '../../redux/phonebook-operations';
 import shortid from 'shortid';
 import { getContacts, isLoader } from '../../redux/phonebook-selectors';
 import s from './ContactForm.module.css';
@@ -17,10 +20,10 @@ export default function ContactForm() {
     dispatch(fetchContacts());
   }, [dispatch]);
 
-  const onSubmit = contact => {
-    // dispatch(fetchContacts());
-    dispatch(addContacts(contact));
-  };
+  // const onSubmit = contact => {
+  //   // dispatch(fetchContacts());
+  //   dispatch(addContact(contact));
+  // };
 
   const onSubmitForm = e => {
     e.preventDefault();
@@ -45,10 +48,10 @@ export default function ContactForm() {
     }
   };
 
-  const addContact = () => {
+  const addNewContact = () => {
     const newContactId = shortid.generate();
     const newContact = { name, number, id: newContactId };
-    onSubmit(newContact);
+    dispatch(postAddContact(newContact));
   };
 
   const checkContactList = () => {
@@ -57,7 +60,7 @@ export default function ContactForm() {
       contact => contact.name.toLocaleLowerCase() === normalizedName,
     )
       ? alert(`${name} is already in contacts`)
-      : addContact();
+      : addNewContact();
   };
 
   const resetForm = () => {
